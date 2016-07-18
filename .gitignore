@@ -1,0 +1,21 @@
+*.class
+
+#################
+## Eclipse
+#################
+
+.classpath
+.metadata
+.project
+.settings
+bin
+target
+
+*.pydevproject
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.loadpath
