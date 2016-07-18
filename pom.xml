@@ -72,7 +72,7 @@
         <!-- base setting -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.jdk>1.7</project.build.jdk>
-		<plugin.maven-compiler>3.1</plugin.maven-compiler>
+	<plugin.maven-compiler>3.1</plugin.maven-compiler>
         <!-- lib versions -->
         <junit.version>4.11</junit.version>
         <spring.version>4.0.2.RELEASE</spring.version>
@@ -181,27 +181,27 @@
         </dependency>
 
         <!-- jackson -->
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-annotations</artifactId>
-			<version>${jackson.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-core</artifactId>
-			<version>${jackson.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>${jackson.version}</version>
-		</dependency>
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-annotations</artifactId>
+	    <version>${jackson.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-core</artifactId>
+		<version>${jackson.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-databind</artifactId>
+	      	<version>${jackson.version}</version>
+	</dependency>
 
         <!-- log start -->
         <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>${log4j.version}</version>
+		<groupId>log4j</groupId>
+            	<artifactId>log4j</artifactId>
+            	<version>${log4j.version}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -287,12 +287,12 @@
             <version>${aspectj.version}</version>
         </dependency>
 
-		<!-- mybatis分页插件 -->
-		<dependency>
-			<groupId>com.github.pagehelper</groupId>
-			<artifactId>pagehelper</artifactId>
-			<version>4.0.3</version>
-		</dependency>
+	<!-- mybatis分页插件 -->
+	<dependency>
+		<groupId>com.github.pagehelper</groupId>
+		<artifactId>pagehelper</artifactId>
+		<version>4.0.3</version>
+	</dependency>
 		
         <!-- hibernate-validator -->
         <dependency>
