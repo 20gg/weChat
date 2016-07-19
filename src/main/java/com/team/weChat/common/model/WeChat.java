@@ -28,7 +28,7 @@ public class WeChat implements Cloneable, Serializable {
 
 	// 入库id 忽略属性
 	
-	private Long id;
+	private String id;
 	// solr 设置别名
 	
 	private String solrid;
@@ -117,11 +117,11 @@ public class WeChat implements Cloneable, Serializable {
 		return instance;
 	}
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

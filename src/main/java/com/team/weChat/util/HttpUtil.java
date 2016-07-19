@@ -1,6 +1,8 @@
 package com.team.weChat.util;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -34,7 +36,7 @@ public class HttpUtil {
     }
     
     
-    public static void main(String[] args) throws Exception {
+    public static void main1(String[] args) throws Exception {
     	CloseableHttpClient httpclient = HttpClients.createDefault();
     	HttpGet httpget = new HttpGet("http://blog.csdn.net/xinshou_jiaoming/article/details/8600230");
     	CloseableHttpResponse response = httpclient.execute(httpget);
@@ -50,7 +52,17 @@ public class HttpUtil {
     
     
     
-    
+    public HttpUtil() {
+		super();
+	}
+
+
+	public static void main(String[] args) {
+		List<HttpUtil> list = new ArrayList<HttpUtil>();
+		while(true){
+			list.add(new HttpUtil());
+		}
+	}
     
     
     
