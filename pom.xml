@@ -47,7 +47,7 @@
             </plugin>
         </plugins>
 
-        <!--配置Maven 对resource文件 过滤 -->
+        <!--对resource文件 只对properties和xml文件做过滤 ，它俩就可以用${}了-->
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
