@@ -308,5 +308,15 @@
 		</dependency>
 <!-- redis cache related.....end -->  
     	 
+    	<!-- 抓包，网络嗅探 --> 
+    	<dependency>
+			<groupId>jpcap</groupId>
+			<artifactId>jpcap</artifactId>
+			<version>v1.0</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/jpcap.jar</systemPath>
+		</dependency> 
+    	 
+    	 
     </dependencies>
 </project>
