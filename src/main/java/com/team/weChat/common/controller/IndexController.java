@@ -69,7 +69,7 @@ public class IndexController  {
 	@SuppressWarnings("unchecked")
 	@RequestMapping("/getWeChatData")
 	@ResponseBody
-	public Map<String, List<WeChat>> getWeChatData(@RequestParam(value = "currentPage", required = false) Integer  currentPage){
+	public Map<String, List<WeChat>> getWeChatData(Integer  currentPage){
 		Map<String, List<WeChat>> map = new HashMap<String, List<WeChat>>();
 		ObjectMapper mapper = new ObjectMapper();
 		//redis缓存取值
