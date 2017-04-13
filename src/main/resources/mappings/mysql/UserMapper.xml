@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.team.weChat.demo.mapper.UserMapper">
+	<resultMap type="com.team.weChat.demo.dto.User" id="BaseResultMap">
+        <result property="id" column="id" javaType="Integer"/>
+        <result property="name" column="name" javaType="String"/>
+        <result property="password" column="password" javaType="String"/>
+	</resultMap>
+	
+	<insert id="add"  useGeneratedKeys="true" keyProperty="id" parameterType="com.team.weChat.demo.dto.User">
+		INSERT INTO user (
+				name,
+				password 
+		) 
+		VALUES (
+				#{name},
+				#{password}
+		)
+	</insert>
+	
+	<select id="getAllUser" resultMap="BaseResultMap">
+		select * from user
+	</select>
+</mapper>

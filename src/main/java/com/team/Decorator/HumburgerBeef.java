@@ -1,4 +1,4 @@
-package com.team.Decorator;
+package com.team.decorator;
 
 /**
  * 牛肉汉堡类（被装饰着的初始状态，当然也有自己简单的装饰）

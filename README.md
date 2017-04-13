@@ -1,2 +1,6 @@
 # weChat
-使用瀑布流式展示微信公众号爬虫数据！
+	mapper通用示例
+	1、mybatis 通用实现
+	2、system 系统配置
+	3、weChat 调用实例
+	

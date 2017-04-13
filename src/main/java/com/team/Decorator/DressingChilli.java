@@ -1,4 +1,4 @@
-package com.team.Decorator;
+package com.team.decorator;
 /**
  * 加什么调料？ 当然是辣椒喽
  * @author hsnn

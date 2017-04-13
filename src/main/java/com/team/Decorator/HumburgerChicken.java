@@ -1,4 +1,4 @@
-package com.team.Decorator;
+package com.team.decorator;
 
 public class HumburgerChicken extends Humburger {
 

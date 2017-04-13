@@ -26,7 +26,7 @@ import org.springframework.data.redis.core.RedisTemplate;
  * @version
  * 
  */
-@Configuration
+/*@Configuration
 @EnableCaching
 public class RedisCacheConfig extends CachingConfigurerSupport {
 	@Bean
@@ -66,4 +66,4 @@ public class RedisCacheConfig extends CachingConfigurerSupport {
 			}
 		};
 	}
-}
+}*/

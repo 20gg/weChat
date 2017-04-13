@@ -1,4 +1,4 @@
-package com.team.Decorator;
+package com.team.decorator;
 
 /**
  * 加火腿 +2元 

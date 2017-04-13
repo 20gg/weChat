@@ -1,4 +1,4 @@
-package com.team.Decorator;
+package com.team.decorator;
 
 /**
  * 加芝士 +4元

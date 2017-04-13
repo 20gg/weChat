@@ -60,10 +60,18 @@ http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
 			</array>
 		</property>
 	</bean>
-	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.team.weChat.**.dao" />
-		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
-	</bean>
+    <bean id="mapperScannerConfigurer" class="com.team.mybatis.spring.MapperScannerConfigurer">
+        <property name="basePackage" value="com.team.weChat.**.mapper"/>
+        <property name="processPropertyPlaceHolders" value="true"/>
+        <property name="propertiesMap">
+            <map>
+                <entry key="mappers" value="com.team.mybatis.common.Mapper"/>
+                <entry key="IDENTITY" value="${mybatis.identity}"/>
+                <entry key="seqFormat" value="{3}_s.nextVal"/>
+            </map>
+        </property>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+    </bean>
 
 	<!-- 配置事务管理器 -->
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

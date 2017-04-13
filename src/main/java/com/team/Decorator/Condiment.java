@@ -1,4 +1,4 @@
-package com.team.Decorator;
+package com.team.decorator;
 
 /**
  * 配料的基类（装饰者）

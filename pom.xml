@@ -17,7 +17,7 @@
 			<properties>
 				<jdbc.url><![CDATA[jdbc:mysql://localhost:3306/weChat?autoReconnect=true&amp;createDatabaseIfNotExist=true&amp;useUnicode=true&amp;characterEncoding=utf-8]]></jdbc.url>
 			    <jdbc.username>root</jdbc.username>
-			    <jdbc.password>123456</jdbc.password>
+			    <jdbc.password></jdbc.password>
 			    <jdbc.driver>com.mysql.jdbc.Driver</jdbc.driver>
 			    
 			    <ds.initialSize>1</ds.initialSize>
@@ -27,7 +27,7 @@
 			    <ds.timeBetweenEvictionRunsMillis>60000</ds.timeBetweenEvictionRunsMillis>
 			    <ds.minEvictableIdleTimeMillis>300000</ds.minEvictableIdleTimeMillis>
 			    <mybatis.dialect>mysql</mybatis.dialect>
-   			    <mybatis.mapperLocations>classpath*:/mappings/mysql/**/*Mapper.xml</mybatis.mapperLocations>
+   			    <mybatis.mapperLocations>classpath*:/mappings/**/*Mapper.xml</mybatis.mapperLocations>
 			</properties>
 		</profile>
 	</profiles>
@@ -63,13 +63,19 @@
     <properties>
         <!-- base setting -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.build.jdk>1.7</project.build.jdk>
+        <project.build.jdk>1.8</project.build.jdk>
 		<plugin.maven-compiler>3.1</plugin.maven-compiler>
         <!-- lib versions -->
         <junit.version>4.11</junit.version>
         <spring.version>4.2.5.RELEASE</spring.version>
-        <mybatis.version>3.2.2</mybatis.version>
-        <mybatis.spring.version>1.2.2</mybatis.spring.version>
+        
+        <!-- 通用mapper需要的依赖库 -->
+        <mybatis.version>3.3.0</mybatis.version>
+        <persistence.version>1.0</persistence.version>
+        <mybatis.spring.version>1.2.3</mybatis.spring.version>
+        <commons.version>3.4</commons.version>
+        
+        
         <mysql.connector.version>5.1.30</mysql.connector.version>
         <postgresql.version>9.1-901.jdbc4</postgresql.version>
         <slf4j.version>1.6.6</slf4j.version>
@@ -92,6 +98,12 @@
     </properties>
 
     <dependencies>
+    
+    <dependency>
+	    <groupId>org.apache.maven.plugins</groupId>
+	    <artifactId>maven-resources-plugin</artifactId>
+	    <version>2.6</version>
+	</dependency>
         <!-- junit -->
         <dependency>
             <groupId>junit</groupId>
@@ -147,6 +159,19 @@
         </dependency>
         <!-- springframe end -->
 
+		<!-- mybatis包要用的包 -->
+		<dependency>
+		    <groupId>javax.persistence</groupId>
+		    <artifactId>persistence-api</artifactId>
+		    <version>${persistence.version}</version>
+		</dependency>
+		
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons.version}</version>
+        </dependency>
+        
         <!-- mybatis start-->
         <dependency>
             <groupId>org.mybatis</groupId>
@@ -307,16 +332,6 @@
     		<version>${spring.data.redis.version}</version>
 		</dependency>
 <!-- redis cache related.....end -->  
-    	 
-    	<!-- 抓包，网络嗅探 --> 
-    	<dependency>
-			<groupId>jpcap</groupId>
-			<artifactId>jpcap</artifactId>
-			<version>v1.0</version>
-			<scope>system</scope>
-			<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/jpcap.jar</systemPath>
-		</dependency> 
-    	 
     	 
     </dependencies>
 </project>

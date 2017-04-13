@@ -1,4 +1,4 @@
-package com.team.Decorator;
+package com.team.decorator;
 
 import java.util.ArrayList;
 import java.util.List;

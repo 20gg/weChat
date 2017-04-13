@@ -1,4 +1,4 @@
-package com.team.Decorator;
+package com.team.decorator;
 
 /**
  * 汉堡基类（被装饰者)
