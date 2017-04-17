@@ -1,13 +1,10 @@
 package com.team.weChat.demo.dto;
 
-import javax.persistence.Table;
-
 import com.team.mybatis.annotation.ExtensionAttribute;
 import com.team.system.dto.BaseDTO;
 
 
 @ExtensionAttribute(disable=true)
-@Table(name = "user")
 public class User extends BaseDTO {
 	private static final long serialVersionUID = 1182600301312637420L;
 	

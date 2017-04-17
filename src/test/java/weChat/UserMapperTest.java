@@ -22,8 +22,8 @@ import com.team.weChat.demo.service.IUserService;
  */
 @ContextConfiguration(locations = {"classpath*:spring.xml","classpath*:spring-mybatis-test.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
-@Rollback
-@Transactional
+//@Rollback
+//@Transactional
 public class UserMapperTest {
 	
 	    @Autowired
@@ -57,6 +57,7 @@ public class UserMapperTest {
 	    	user.setName("阿海");
 	    	user.setPassword("321");
 	    	userService.insert(user);
+	    	System.out.println(user.getCreationDate());
 	    	list = userService.selectAll();
 	    	assertNotNull(list);
 	    	for (User user2 : list) {

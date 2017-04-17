@@ -45,6 +45,31 @@
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
+            
+            <!-- mvn命令生成代码 -->
+             <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>${mybatis.generator.version}</version>
+                <configuration>
+                    <configurationFile>${basedir}/src/main/resources/generator/generatorConfig.xml</configurationFile>
+                    <overwrite>true</overwrite>
+                    <verbose>true</verbose>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>mysql</groupId>
+                        <artifactId>mysql-connector-java</artifactId>
+                        <version>${mysql.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>tk.mybatis</groupId>
+                        <artifactId>mapper</artifactId>
+                        <version>${mapper.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            
         </plugins>
 
         <!--对resource文件 只对properties和xml文件做过滤 ，它俩就可以用${}了-->
@@ -69,14 +94,30 @@
         <junit.version>4.11</junit.version>
         <spring.version>4.2.5.RELEASE</spring.version>
         
+        <!-- mybatis代码生成器 ：只需要pom配置文件和generatorConfig.xml，命令：mvn mybatis-generator:generate -->
+        <mybatis.generator.version>1.3.2</mybatis.generator.version>
+				
+        <!--  MyBatis Generator  -->
+        <mapper.plugin>tk.mybatis.mapper.generator.MapperPlugin</mapper.plugin> 
+		<mapper.Mapper>tk.mybatis.mapper.common.Mapper</mapper.Mapper>
+		<!--  Java接口和实体类  -->
+		<targetJavaProject>${basedir}/src/main/java</targetJavaProject>
+		<targetMapperPackage>com.team.weChat.XXX.mapper</targetMapperPackage>
+		<targetModelPackage>com.team.weChat.XXX.dto</targetModelPackage>
+		
+		<!--  XML生成路径  -->
+		<targetResourcesProject>${basedir}/src/main/resources</targetResourcesProject>
+		<targetXMLPackage>mappings/mysql</targetXMLPackage>
+        
+        
         <!-- 通用mapper需要的依赖库 -->
         <mybatis.version>3.3.0</mybatis.version>
         <persistence.version>1.0</persistence.version>
         <mybatis.spring.version>1.2.3</mybatis.spring.version>
         <commons.version>3.4</commons.version>
+        <mapper.version>3.3.6</mapper.version>
         
-        
-        <mysql.connector.version>5.1.30</mysql.connector.version>
+        <mysql.version>5.1.30</mysql.version>
         <postgresql.version>9.1-901.jdbc4</postgresql.version>
         <slf4j.version>1.6.6</slf4j.version>
         <log4j.version>1.2.12</log4j.version>
@@ -109,6 +150,7 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
+            <scope>test</scope>
         </dependency>
 
         <!-- springframe start -->
@@ -156,9 +198,19 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
             <version>${spring.version}</version>
+            <scope>test</scope>
         </dependency>
         <!-- springframe end -->
 
+
+        <!-- Mybatis Generator -->
+        <dependency>
+            <groupId>org.mybatis.generator</groupId>
+            <artifactId>mybatis-generator-core</artifactId>
+            <version>${mybatis.generator.version}</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
 		<!-- mybatis包要用的包 -->
 		<dependency>
 		    <groupId>javax.persistence</groupId>
@@ -183,13 +235,19 @@
             <artifactId>mybatis-spring</artifactId>
             <version>${mybatis.spring.version}</version>
         </dependency>
+        <!--通用Mapper-->
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper</artifactId>
+            <version>${mapper.version}</version>
+        </dependency>
         <!--mybatis end-->
 
         <!-- mysql-connector -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>${mysql.connector.version}</version>
+            <version>${mysql.version}</version>
         </dependency>
 
         <!-- DruidDataSource -->
