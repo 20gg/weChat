@@ -31,6 +31,7 @@ import com.team.weChat.util.PageHelp;
  * @author yxc
  */
 @Controller
+@RequestMapping("/index")
 public class IndexController  {
 	private final static Logger log = Logger.getLogger(IndexController.class);
 
