@@ -7,6 +7,12 @@ http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
 http://www.springframework.org/schema/aop 
 http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
 ">
+
+	<!-- 自动代理 -->
+	<aop:aspectj-autoproxy />
+	 <bean class="com.team.weChat.aop.AopAspect" />
+	 
+	 
     <!-- dataSource 配置 -->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
         <!-- 基本属性 url、user、password -->

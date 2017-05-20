@@ -114,7 +114,7 @@
         <mybatis.version>3.3.0</mybatis.version>
         <persistence.version>1.0</persistence.version>
         <mybatis.spring.version>1.2.3</mybatis.spring.version>
-        <commons.version>3.4</commons.version>
+        <commons.version>3.5</commons.version>
         <mapper.version>3.3.9</mapper.version>
         
         <mysql.version>5.1.30</mysql.version>

@@ -5,5 +5,5 @@ import com.team.system.service.ProxySelf;
 import com.team.weChat.demo.dto.User;
 
 public interface IUserService extends IBaseService<User>,ProxySelf<IUserService>{
-
+	User login(User u);
 }
