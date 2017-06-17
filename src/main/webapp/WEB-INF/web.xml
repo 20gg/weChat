@@ -65,7 +65,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>springMVC</servlet-name>
-		<url-pattern>*.html</url-pattern>
+		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 	
 	<!-- 配置session超时时间，单位分钟 -->
@@ -88,7 +88,7 @@
 	</jsp-config>
 	
 	<welcome-file-list>
-		<welcome-file>/index.html</welcome-file>
+		<welcome-file>/index</welcome-file>
 	</welcome-file-list>
 	
 	<error-page>

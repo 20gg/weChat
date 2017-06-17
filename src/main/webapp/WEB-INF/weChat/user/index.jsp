@@ -12,7 +12,7 @@
 	</style>
 </head>
 <body>
-fuck YOU 
+fuck you  ${user.name}
 	<div id="wrapper">
 		<div id="container">
 			<c:forEach items="${data }" var="weChat" varStatus="num">

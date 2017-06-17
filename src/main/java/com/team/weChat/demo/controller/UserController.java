@@ -3,6 +3,7 @@ package com.team.weChat.demo.controller;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -17,13 +18,13 @@ public class UserController {
 	private IUserService userService;
 	
 	@RequestMapping("/index")
-	@ResponseBody
-	public String index() {
+	public String index(Model model) {
 		User u = new User();
 		u.setName("张书丹");
 		u.setPassword("123321");
 		userService.login(u);
-		return "index";
+		model.addAttribute("user", u);
+		return "/user/index";
 	}
 	
 	@RequestMapping("/home")
